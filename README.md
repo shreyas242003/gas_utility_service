@@ -86,9 +86,11 @@ if last_submission_time:
 - **Database Indexing**:
   Indexing has been added to the relevant fields of the models. Indexing ensures that queries on frequently filtered or sorted fields (like status, request_type, and created_at) are executed more efficiently.
   example code:
+  ```
   class Meta:
   indexes = [
   models.Index(fields=['status']),
   models.Index(fields=['request_type']),
   models.Index(fields=['created_at']),
   ]
+  ```
