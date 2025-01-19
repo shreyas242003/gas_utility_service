@@ -1,4 +1,4 @@
-# Project Name
+# Project Name: Gas_Utility_Service
 
 Service requests: The application would allow customers to submit service requests online.
 This would include the ability to select the type of service request, provide details about the
