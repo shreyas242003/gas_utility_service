@@ -8,6 +8,7 @@ Request tracking: The application would allow customers to track the status of t
 requests. This would include the ability to see the status of the request, the date and time
 the request was submitted, and the date and time the request was resolved.
 The file structure for the given project is:
+```
 gas-utility-service/
 ├── gas_utility_service/
 │ ├── **init**.py
