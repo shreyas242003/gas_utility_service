@@ -1,0 +1,35 @@
+{% extends 'customer_service/base.html' %} {% block content %}
+<h1>Account Information</h1>
+
+<h2>User Information</h2>
+<p><strong>Username:</strong> {{ user.username }}</p>
+<p><strong>Email:</strong> {{ user.email }}</p>
+
+<p><strong>First Name:</strong> {{ user.first_name }}</p>
+<p><strong>Last Name:</strong> {{ user.last_name }}</p>
+
+<h2>My Service Requests</h2>
+{% if service_requests %}
+<table>
+  <thead>
+    <tr>
+      <th>Request ID</th>
+      <th>Status</th>
+      <th>Date Submitted</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for request in service_requests %}
+    <tr>
+      <td>{{ request.id }}</td>
+      <td>{{ request.status }}</td>
+      <td>{{ request.created_at }}</td>
+      <td>{{ request.details }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>You have not submitted any service requests yet.</p>
+{% endif %} {% endblock %}

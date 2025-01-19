@@ -1,0 +1,20 @@
+{% extends "customer_service/base.html" %} {% block content %}
+<h1>My Service Requests</h1>
+{% if service_requests %}
+<ul>
+  {% for request in service_requests %}
+  <li>
+    <strong>Request ID:</strong> {{ request.id }}<br />
+    <strong>Status:</strong> {{ request.status }}<br />
+    <strong>Date Submitted:</strong> {{ request.created_at }}<br />
+    {% if request.resolved_at %}
+    <strong>Date Resolved:</strong> {{ request.resolved_at }}<br />
+    {% else %}
+    <strong>Date Resolved:</strong> Not resolved yet<br />
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No service requests found.</p>
+{% endif %} {% endblock %}

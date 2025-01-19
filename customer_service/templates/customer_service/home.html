@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    {% if user.is_authenticated %} {% if user.is_staff %}
+    <a href="{% url 'support_dashboard' %}">Go to Admin Dashboard</a>
+    {% else %}
+    <a href="{% url 'submit_request' %}">Submit a Request</a>
+    {% endif %} {% else %}
+    <h1>Welcome to the Service Portal</h1>
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+  </body>
+</html>

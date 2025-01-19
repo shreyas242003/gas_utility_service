@@ -1,0 +1,38 @@
+{% extends 'support/base.html' %} {% block content %}
+<h2>Support Dashboard</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Request ID</th>
+      <th>Request Type</th>
+      <th>Status</th>
+      <th>Attachment</th>
+
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for request in requests %}
+    <tr>
+      <td>{{ request.id }}</td>
+      <td>{{ request.request_type }}</td>
+      <td>{{ request.status }}</td>
+
+      <td>
+        {% if request.attachment %}
+        <a href="{{ request.attachment.url }}" target="_blank"
+          >View Attachment</a
+        >
+        {% else %} No Attachment {% endif %}
+      </td>
+
+      <td>
+        <a href="{% url 'update_request_status' request.id %}"
+          >Update Request</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

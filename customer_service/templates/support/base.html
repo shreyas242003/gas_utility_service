@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gas Utility Service</title>
+  </head>
+  <body>
+    <header>
+      <h1>Gas Utility Service Dashboard</h1>
+      <nav>
+        <ul>
+          <form
+            id="logout-form"
+            action="{% url 'logout' %}"
+            method="post"
+            style="display: none"
+          >
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+          </form>
+          <a href="#" onclick="document.getElementById('logout-form').submit();"
+            >Logout</a
+          >
+        </ul>
+      </nav>
+    </header>
+
+    <div>{% block content %} {% endblock %}</div>
+  </body>
+</html>

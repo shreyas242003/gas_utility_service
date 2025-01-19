@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Service</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'submit_request' %}">Submit Request</a></li>
+          <li><a href="{% url 'request_status' %}">Track Request Status</a></li>
+          <li>
+            <form
+              id="logout-form"
+              action="{% url 'logout' %}"
+              method="post"
+              style="display: none"
+            >
+              {% csrf_token %}
+              <button type="submit">Logout</button>
+            </form>
+            <a
+              href="#"
+              onclick="document.getElementById('logout-form').submit();"
+              >Logout</a
+            >
+            <li><a href="{% url 'account_info' %}">Account Info</a></li>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      {% block content %}
+      <!-- The content for each page will be inserted here -->
+      {% endblock %}
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Gas Utility Service. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
