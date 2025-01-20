@@ -67,10 +67,11 @@ To prevent excessive requests from the same user in a short time frame, **rate l
   - If a user attempts to submit a request before the time window has passed, an error message is displayed to let them know they must wait before submitting another request.
 
 This is implemented using Django’s caching mechanism, which stores the timestamp of the last request for each user. If the time difference between the current request and the last submission is less than the allowed rate limit, the user will be prompted to try again later.
+```
 
 Example code:
 
-```python
+python
 last_submission_time = cache.get(RATE_LIMIT_KEY_PREFIX + str(request.user.id))
 
 if last_submission_time:
