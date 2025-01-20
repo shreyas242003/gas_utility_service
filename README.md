@@ -50,7 +50,7 @@ gas-utility-service/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
-
+```
 ## Features
 
 - **Rate Limiting**: Prevents excessive requests to improve server performance and user experience.
