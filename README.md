@@ -55,7 +55,7 @@ gas-utility-service/
 
 - **Rate Limiting**: Prevents excessive requests to improve server performance and user experience.
 - **Database Indexing**: Optimized database queries using indexing to improve performance.
-```
+
 ## Performance Improvements
 
 ### Rate Limiting
